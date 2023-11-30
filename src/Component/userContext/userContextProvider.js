@@ -6,8 +6,8 @@ export const userContext = createContext(null);
 
 //      data pass to all components
 export const useUserContext = () => {
-    const { id, title, name, post, editNote, getNote, submitNote2, handleEdit, setEditNote, date, setDate, ActiveNote, task, handleCheck, tasks, setTask, setTasks, handleChange2, handleDelete2, getNotes, setActiveNote, lastModified, content, note, setNote, edit, setEdit, notes, setNotes, handleChange, submitNote, names, handleDelete, validated } = useContext(userContext);
-    return { id, title, content, post, name, handleEdit, getNote, submitNote2, editNote, setEditNote, date, setDate, task, handleCheck, tasks, setTask, setTasks, handleChange2, handleDelete2, ActiveNote, getNotes, setActiveNote, lastModified, note, setNote, edit, setEdit, notes, setNotes, handleChange, submitNote, names, handleDelete, validated };
+    const { id, title, name, post, editNote, getNote, submitNote2, handleEdit, setEditNote, date, setDate, ActiveNote, task, handleCheck, tasks, setTask, setTasks, handleChange2, handleDelete2, getNotes, setActiveNote, lastModified, content, note, setNote, edit, setEdit, notes, setNotes, handleChange, submitNote, names, handleDelete } = useContext(userContext);
+    return { id, title, content, post, name, handleEdit, getNote, submitNote2, editNote, setEditNote, date, setDate, task, handleCheck, tasks, setTask, setTasks, handleChange2, handleDelete2, ActiveNote, getNotes, setActiveNote, lastModified, note, setNote, edit, setEdit, notes, setNotes, handleChange, submitNote, names, handleDelete };
 };
 
 //      user name
@@ -35,9 +35,6 @@ export default function UserContextProvider({ children }) {
     const [editNote, setEditNote] = useState("");
     const [tasks, setTasks] = useState("");
     const [date, setDate] = useState("");
-
-    //      input validation
-    const [validated, setValidated] = useState(false);
 
     //      current page active
     const [ActiveNote, setActiveNote] = useState(false);
@@ -138,7 +135,7 @@ export default function UserContextProvider({ children }) {
     };
 
     return (
-        <userContext.Provider value={{ names, handleEdit, getNotes, submitNote2, ActiveNote, editNote, setEditNote, setDate, handleCheck, task, handleDelete2, setTask, tasks, setTasks, handleChange2, setActiveNote, note, setNote, notes, setNotes, handleChange, submitNote, validated, handleDelete }}>
+        <userContext.Provider value={{ names, handleEdit, getNotes, submitNote2, ActiveNote, editNote, setEditNote, setDate, handleCheck, task, handleDelete2, setTask, tasks, setTasks, handleChange2, setActiveNote, note, setNote, notes, setNotes, handleChange, submitNote, handleDelete }}>
             {children}
         </userContext.Provider>
     );

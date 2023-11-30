@@ -16,12 +16,12 @@ import { FaRegClock } from "react-icons/fa";
 
 export default function Notes() {
 
-    const { notes, handleChange, submitNote, validated } = useUserContext();
+    const { notes, handleChange, submitNote } = useUserContext();
 
     return (
         <>
             <div className='bg-info w-100 p-2 m-1'>
-                <Form type="submit" validated={validated} onSubmit={submitNote}>
+                <Form type="submit" onSubmit={submitNote}>
                     <div className='d-flex align-content-center justify-content-between p-2'>
                         <h1>Add a Note</h1>
                         <span>
