@@ -9,11 +9,13 @@ export default function Home() {
     const { names } = useContext(userContext);
 
     return (
-        <div className=' bg-body-secondary w-100 h-100'>
+        <div className='bg-body-secondary w-100 h-100'>
             <h1>
                 Welcome {names}
             </h1>
-            <NoteList />
+            <div className='overflow-auto'>
+                <NoteList />
+            </div>
             <TaskList />
         </div>
     )
